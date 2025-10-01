@@ -1,0 +1,49 @@
+{
+  "recommendations": [
+    // TypeScript and JavaScript
+    "ms-vscode.vscode-typescript-next",
+    
+    // Code formatting and linting
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    
+    // Testing
+    "orta.vscode-jest",
+    
+    // AWS and Cloud Development
+    "amazonwebservices.aws-toolkit-vscode",
+    "ms-vscode.vscode-json",
+    
+    // Terraform and Infrastructure
+    "hashicorp.terraform",
+    
+    // Database and SQL
+    "ms-ossdata.vscode-postgresql",
+    
+    // Git and Version Control
+    "eamodio.gitlens",
+    "github.vscode-pull-request-github",
+    
+    // General Development
+    "ms-vscode.vscode-npm-script",
+    "christian-kohler.npm-intellisense",
+    "christian-kohler.path-intellisense",
+    "bradlc.vscode-tailwindcss",
+    
+    // File and Project Management
+    "ms-vscode.vscode-folding-plus",
+    "usernamehw.errorlens",
+    "gruntfuggly.todo-tree",
+    "aaron-bond.better-comments",
+    
+    // Markdown and Documentation
+    "yzhang.markdown-all-in-one",
+    "davidanson.vscode-markdownlint",
+    
+    // Productivity and UI
+    "ms-vscode.vscode-colorize",
+    "naumovs.color-highlight",
+    "vscode-icons-team.vscode-icons",
+    "pkief.material-icon-theme"
+  ]
+}
