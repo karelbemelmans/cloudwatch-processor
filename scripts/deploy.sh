@@ -17,19 +17,19 @@ if [[ "$ENVIRONMENT" != "staging" && "$ENVIRONMENT" != "production" ]]; then
 fi
 
 # Check if required tools are installed
-command -v npm >/dev/null 2>&1 || { echo "❌ npm is required but not installed." >&2; exit 1; }
+command -v pnpm >/dev/null 2>&1 || { echo "❌ pnpm is required but not installed." >&2; exit 1; }
 command -v terraform >/dev/null 2>&1 || { echo "❌ terraform is required but not installed." >&2; exit 1; }
 
 # Build the application
 if [[ "$SKIP_BUILD" != "true" ]]; then
     echo "🔨 Building application..."
-    npm ci
-    npm run build
-    npm run test
-    npm run lint
+    pnpm install
+    pnpm run build
+    pnpm run test
+    pnpm run lint
     
     echo "📦 Creating deployment package..."
-    npm run package
+    pnpm run package
 else
     echo "⏭️  Skipping build step"
 fi

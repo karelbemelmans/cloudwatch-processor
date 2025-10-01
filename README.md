@@ -31,7 +31,7 @@ The Lambda function:
 ## Prerequisites
 
 - Node.js 20.x or higher
-- npm or yarn
+- pnpm package manager
 - AWS CLI configured with appropriate permissions
 - Terraform 1.0 or higher
 - PostgreSQL database (RDS recommended)
@@ -46,17 +46,17 @@ cd cloudwatch-processor
 
 2. Install dependencies:
 ```bash
-npm install
+pnpm install
 ```
 
 3. Build the project:
 ```bash
-npm run build
+pnpm run build
 ```
 
 4. Run tests:
 ```bash
-npm test
+pnpm test
 ```
 
 ## Database Schema
@@ -97,16 +97,16 @@ The Lambda function requires the following environment variables:
 
 ### Available Scripts
 
-- `npm run build` - Compile TypeScript to JavaScript
-- `npm run build:watch` - Watch mode compilation
-- `npm test` - Run test suite
-- `npm run test:watch` - Run tests in watch mode
-- `npm run test:coverage` - Run tests with coverage report
-- `npm run lint` - Run ESLint
-- `npm run lint:fix` - Fix ESLint issues automatically
-- `npm run format` - Format code with Prettier
-- `npm run format:check` - Check code formatting
-- `npm run package` - Create deployment package
+- `pnpm run build` - Compile TypeScript to JavaScript
+- `pnpm run build:watch` - Watch mode compilation
+- `pnpm test` - Run test suite
+- `pnpm run test:watch` - Run tests in watch mode
+- `pnpm run test:coverage` - Run tests with coverage report
+- `pnpm run lint` - Run ESLint
+- `pnpm run lint:fix` - Fix ESLint issues automatically
+- `pnpm run format` - Format code with Prettier
+- `pnpm run format:check` - Check code formatting
+- `pnpm run package` - Create deployment package
 
 ### Project Structure
 
@@ -161,8 +161,8 @@ Deploy to production:
 
 Build and package:
 ```bash
-npm run build
-npm run package
+pnpm run build
+pnpm run package
 ```
 
 Deploy with Terraform:
@@ -271,8 +271,8 @@ Enable debug logging by setting the Lambda timeout to a higher value and checkin
 2. Create a feature branch
 3. Make your changes
 4. Add tests for new functionality
-5. Run the full test suite: `npm test`
-6. Run linting: `npm run lint`
+5. Run the full test suite: `pnpm test`
+6. Run linting: `pnpm run lint`
 7. Submit a pull request
 
 ## Testing
@@ -285,9 +285,9 @@ The project includes comprehensive test coverage:
 
 Run tests:
 ```bash
-npm test                    # Run all tests
-npm run test:coverage      # Run with coverage report
-npm run test:watch         # Run in watch mode
+pnpm test                    # Run all tests
+pnpm run test:coverage      # Run with coverage report
+pnpm run test:watch         # Run in watch mode
 ```
 
 ## License

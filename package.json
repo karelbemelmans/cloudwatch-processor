@@ -15,7 +15,7 @@
     "format:check": "prettier --check src/**/*.ts",
     "start": "node dist/index.js",
     "clean": "rm -rf dist",
-    "package": "npm run clean && npm run build && zip -r lambda-deployment.zip dist node_modules package.json"
+    "package": "pnpm run clean && pnpm run build && zip -r lambda-deployment.zip dist node_modules package.json"
   },
   "keywords": [
     "aws",
