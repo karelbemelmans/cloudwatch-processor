@@ -1,0 +1,115 @@
+{
+  "AWS Lambda Handler": {
+    "prefix": "lambda-handler",
+    "body": [
+      "import { ${1:EventType}, Context } from 'aws-lambda';",
+      "",
+      "export const handler = async (",
+      "  event: ${1:EventType},",
+      "  context: Context",
+      "): Promise<${2:ResultType}> => {",
+      "  console.log('Event:', JSON.stringify(event, null, 2));",
+      "  console.log('Context:', JSON.stringify(context, null, 2));",
+      "",
+      "  try {",
+      "    $0",
+      "    ",
+      "    return {",
+      "      statusCode: 200,",
+      "      body: JSON.stringify({ message: 'Success' })",
+      "    };",
+      "  } catch (error) {",
+      "    console.error('Error:', error);",
+      "    throw error;",
+      "  }",
+      "};"
+    ],
+    "description": "Create an AWS Lambda handler function"
+  },
+  "Jest Test Suite": {
+    "prefix": "jest-describe",
+    "body": [
+      "describe('${1:Component}', () => {",
+      "  beforeEach(() => {",
+      "    $2",
+      "  });",
+      "",
+      "  afterEach(() => {",
+      "    jest.clearAllMocks();",
+      "  });",
+      "",
+      "  it('should ${3:do something}', async () => {",
+      "    // Arrange",
+      "    $4",
+      "",
+      "    // Act",
+      "    $5",
+      "",
+      "    // Assert",
+      "    $0",
+      "  });",
+      "});"
+    ],
+    "description": "Create a Jest test suite"
+  },
+  "Database Service Method": {
+    "prefix": "db-method",
+    "body": [
+      "async ${1:methodName}(${2:params}): Promise<${3:ReturnType}> {",
+      "  const client = await this.pool.connect();",
+      "  try {",
+      "    const result = await client.query('${4:SQL_QUERY}', [${5:params}]);",
+      "    return result.rows;",
+      "  } catch (error) {",
+      "    console.error('Database error in ${1:methodName}:', error);",
+      "    throw error;",
+      "  } finally {",
+      "    client.release();",
+      "  }",
+      "}"
+    ],
+    "description": "Create a database service method with connection management"
+  },
+  "Environment Variable Check": {
+    "prefix": "env-check",
+    "body": [
+      "if (!process.env['${1:ENV_VAR}']) {",
+      "  throw new Error('${1:ENV_VAR} environment variable is required');",
+      "}"
+    ],
+    "description": "Check for required environment variable"
+  },
+  "Console Log with Context": {
+    "prefix": "log-context",
+    "body": [
+      "console.log('${1:message}:', {",
+      "  ${2:key}: ${3:value},",
+      "  timestamp: new Date().toISOString(),",
+      "  requestId: context.awsRequestId",
+      "});"
+    ],
+    "description": "Console log with context information"
+  },
+  "Type Interface": {
+    "prefix": "interface",
+    "body": [
+      "export interface ${1:InterfaceName} {",
+      "  ${2:property}: ${3:type};",
+      "  $0",
+      "}"
+    ],
+    "description": "Create a TypeScript interface"
+  },
+  "Terraform Resource": {
+    "prefix": "tf-resource",
+    "body": [
+      "resource \"${1:provider}_${2:resource_type}\" \"${3:name}\" {",
+      "  ${4:property} = \"${5:value}\"",
+      "  $0",
+      "",
+      "  tags = var.tags",
+      "}"
+    ],
+    "description": "Create a Terraform resource"
+  }
+}

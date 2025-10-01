@@ -1,0 +1,25 @@
+# Production Environment Configuration
+# Copy this file to terraform.tfvars and update with your values
+
+aws_region    = "us-east-1"
+function_name = "cloudwatch-processor"
+
+# Database configuration
+db_host     = "your-production-db-host.amazonaws.com"
+db_port     = 5432
+db_name     = "cloudwatch_logs_production"
+db_user     = "cloudwatch_user"
+db_password = "your-secure-password-here"
+db_ssl      = true
+
+# VPC configuration (recommended for production)
+vpc_subnet_ids         = ["subnet-12345678", "subnet-87654321"]
+vpc_security_group_ids = ["sg-12345678"]
+
+# CloudWatch Logs subscription filter
+enable_subscription_filter = true
+source_log_group_name     = "/aws/lambda/your-source-function"
+log_filter_pattern        = "[timestamp, request_id, level=ERROR, ...]"
+
+# Monitoring configuration
+alarm_notification_arns = ["arn:aws:sns:us-east-1:123456789012:alerts"]

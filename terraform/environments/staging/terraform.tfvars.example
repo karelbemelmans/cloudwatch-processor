@@ -1,0 +1,22 @@
+# Staging Environment Configuration
+# Copy this file to terraform.tfvars and update with your values
+
+aws_region    = "us-east-1"
+function_name = "cloudwatch-processor"
+
+# Database configuration
+db_host     = "your-staging-db-host.amazonaws.com"
+db_port     = 5432
+db_name     = "cloudwatch_logs_staging"
+db_user     = "cloudwatch_user"
+db_password = "your-secure-password-here"
+db_ssl      = true
+
+# VPC configuration (optional - leave empty if not using VPC)
+vpc_subnet_ids         = []
+vpc_security_group_ids = []
+
+# CloudWatch Logs subscription filter (optional)
+enable_subscription_filter = false
+source_log_group_name     = "/aws/lambda/your-source-function"
+log_filter_pattern        = ""
